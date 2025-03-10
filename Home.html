@@ -1,0 +1,236 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title> Home </title>
+    
+    <style>
+
+        /*Containter Parent & Children*/
+        .container {
+            display: grid;
+            grid-template-columns: 0.8fr 1.5fr 0.7fr;
+            grid-template-rows: 0.5fr 2fr 0.5fr;
+            gap: 0px 0px;
+            grid-auto-flow: row;
+            grid-template-areas:
+                "header header header"
+                "aside content1 content2"
+                "footer footer footer";
+        }
+        
+        .header {
+            grid-area: header;
+            text-align:center;
+            padding-top:30px;
+        }
+
+        .aside {
+            grid-area: aside;
+            padding-left: 30px;
+            padding-top: 50px;
+        }
+
+        .footer {
+            grid-area: footer;
+        }
+
+        .content1 {
+            grid-area: content1;
+        }
+
+        .content2 {
+            grid-area: content2;
+            padding-top: 100px;
+            padding-bottom: 40px;
+
+        }
+
+    
+    /*CSS Styling for "topnav"= navigation bar.*/
+        .topnav {
+            overflow: hidden;
+            background-color: #F7F7F2;
+            /*navigation bar main color= baby powder white*/
+        }
+        .topnav a {
+            float:right;
+            color: #000000;
+            /*text color=black*/
+            text-align:center;
+            padding: 25px 20px;
+            font-size: 18px
+        }
+        .topnav a:hover {
+            background-color: #FCAB10;
+            /*hover color=orange*/
+            color: white;
+        }
+        .topnav a.active {
+            background-color: #2B9EB3;
+            /*active color=moonstone blue*/
+            color: #000000;
+        }
+       .topnav .icon{
+           display:none;
+       }
+
+        /*Responsive Navigation Bar CSS Styling for mobile devices.*/
+        @media screen and (max-width:600px){
+            .topnav a:not(:first-child) {display:none;}
+            .topnav a.icon {
+                float:left;
+                display:block;
+            }
+            .topnav .responsive {position:relative;}
+            .topnav .responsive .icon{
+                position:absolute;
+                right:0;
+                top:0;
+            }
+            .topnav .responsive a{
+                float:none;
+                display:block;
+                text-align:center;
+            }
+        }
+
+        body {
+            margin:0;
+            font-family: Georgia, serif;
+            background-color: #2B9EB3;
+        }
+        
+        /*Hover Age CSS Styling*/
+        .hide{
+            display:none;
+        }
+        .hoverAge:hover + .hide{
+            display:block;
+            color:white;
+            text-align:center;
+        }
+        .hoverAge{
+            text-align:center;
+        }
+       
+        /*Footer CSS Styling*/
+        footer {
+            text-align: center;
+            padding: 3px;
+            background-color: #7CD0DF;
+            color: white;
+            font-size: 13px;
+            line-height: 0.5;
+        }
+
+        /*Image CSS Styling*/
+        img.img-personal {
+            border-radius: 10px;
+            /*Responsive Image for different device screens*/
+            max-width: 100%;
+            height: auto;
+        }
+
+        /*Unordered List with no bullets*/
+        ul.no-bullets{
+            list-style-type:none;
+            margin:0;
+            padding:0;
+        }
+        /*Items in list to be centered.*/
+        li.center{
+            text-align:center;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!--Navigation Bar-->
+    <nav>
+        <div class="topnav" id="myTopnav">
+            <a class="active" href="Home.html">Home</a>
+            <a href="AboutMe.html"> About Me </a>
+            <a href="Contact.html"> Contact </a>
+            <a href="javascript:void(0);" class="icon" onclick="topNav()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </div>
+    </nav>
+
+
+    <main>
+        <!--Parent Container-->
+        <div class="container">
+            <!--"Home" header: Should be aligned in the middle.-->
+            <div class="header">
+                <h1> Welcome Home </h1>
+            </div>
+            <div class="aside">
+                <!--""Aside"": Will consist of a picture.-->
+                <img src="meNY2024.jpg" alt="Bali in NY (2024)" style="width:350px;height:300px" class="img-personal"/>
+                <p></p>
+            </div>
+            <div class="content1">
+                <!--"Content1": Content will go in this section.-->
+                <h2 style="font-style:italic"> Who am I?</h2>
+                <h2 style="color:white"> Brakittra Tobtaen </h2>
+                <p> I'm currently a junior and an undergrad student at KSU pursuing a bachelor's degree in Information Technology!</p>
+                <img src="ksu_logo.png" alt="KSU Logo" style="width:170px;height:160px" />
+                <p style="font-size:10px"> Photo: Kennesaw State University&reg;</p>
+                <h3> Goals: </h3>
+                <ul>
+                    <li> Internship</li>
+                    <li> Entry Level Job </li>
+                    <li> Graduate with my bachelor's degree</li>
+                </ul>
+                <p> I would love to get more experience in the industry and be able to maintain a career in IT-related fields.</p>
+                <p> I'm excited for any opportunities and am willing to learn. </p>
+            </div>
+            <!--"Content2": Additional content will go in this section.-->
+            <div class="content2">
+                <h3 style="text-decoration:underline;text-align:center;">Location</h3>
+                <p style="text-align:center;"> Atlanta, GA </p>
+                <h3 style="text-decoration:underline;text-align:center;">Age</h3>
+                <div class="hoverAge">Hover over to reveal age &#128526 </div>
+                <div class="hide"> 25 years old</div>
+                <h3 style="text-decoration:underline;text-align:center">Skills</h3>
+                <ul class="no-bullets">
+                    <li class="center"> Adaptable </li>
+                    <li class="center"> Detail-Oriented </li>
+                    <li class="center"> Can work in teams </li>
+                    <li class="center"> Basic Programming Knowledge</li>
+                    <li class="center"> Basic Hardware & Software Knowledge</li>
+                    
+                </ul>
+
+            </div>
+
+        </div>
+
+    </main>
+
+    <!--Footer of Page-->
+    <footer>
+        <p> Copyright &copy; 2025 | Brakittra Tobtaen</p>
+        <p> Disclaimer: This is a student project made for a web development course.</p>
+        <p> KSU is not directly affiliated with with this project.</p>
+    </footer>
+
+    <!--Javascript for Responsive Navigation Bar-->
+    <script>
+        function topNav() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+                x.className += "responsive";
+            } else {
+                x.className = "topnav";
+            }
+        }
+    </script>
+
+</body>
+</html>
